@@ -2,9 +2,38 @@
 @tailwind components;
 @tailwind utilities;
 
-body{
-    background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url("/chatbac.png");
+body {
+    background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("/chatbac.png");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+}
+
+/* SHAKE ANIMATION ON HORIZONTAL DIRECTION */
+
+.shake {
+    animation: shake 0.82s cubic-bezier(0.36, 0.87, 8.19, 0.97) 0.2s both;
+    transform: translate3d(0,0,0);
+    backface-visibility: hidden;
+    perspective: 100rem;
+}
+
+@keyframes shake {
+    10%,
+    90%{
+        transform: translate3d(-0.1rem, 0, 0);
+    }
+    20%,
+    80%{
+        transform: translate3d(0.2rem, 0, 0);
+    }
+    30%,
+    50%,
+    70%{
+        transform: translate3d(-0.4rem, 0, 0);
+    }
+    40%,
+    60%{
+        transform: translate3d(0.4rem, 0, 0);
+    }
 }

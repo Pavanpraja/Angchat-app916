@@ -11,7 +11,7 @@
 }
 #journal-scroll::-webkit-scrollbar-thumb {
     cursor: pointer;
-    background-color: #a0aec0;
+    background-color: #000000;
     /*outline: 1px solid slategrey;*/
 }
 
