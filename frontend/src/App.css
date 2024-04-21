@@ -28,7 +28,214 @@
 }
 #chat-box::-webkit-scrollbar-thumb {
     cursor: pointer;
-    background-color: #a0aec0;
+    background-color: #000000;
     /*outline: 1px solid slategrey;*/
+}
+
+/* set animation background */
+.setBac{
+    background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("/animatebac.gif") ;
+}
+
+/* starting application animation page */
+
+.animation1{
+    animation: ani01 2s linear;
+}
+@keyframes ani01 {
+    0%{
+        transform: translate(-130px, -130px);
+        color: indigo;
+    }
+    100%{
+        transform: 0;
+    }
+}
+
+.animation2{
+    animation: ani02 2s linear;
+}
+@keyframes ani02 {
+    0%{
+        transform: translate(140px, -130px);
+        color: coral;
+    }
+    100%{
+        transform: 0;
+    }
+}
+
+.animation3{
+    animation: ani03 2s linear;
+}
+@keyframes ani03 {
+    0%{
+        transform: translate(-120px, 130px);
+        color: antiquewhite;
+    }
+    100%{
+        transform: 0;
+    }
+}
+
+.animation4{
+    animation: ani04 2s linear;
+}
+@keyframes ani04 {
+    0%{
+        transform: translate(140px, 130px);
+        color: green;
+    }
+    100%{
+        transform: 0;
+    }
+}
+
+.animation5{
+    animation: ani05 2s linear;
+}
+@keyframes ani05 {
+    0%{
+        transform: translate(-140px, -130px);
+        color: gold;
+    }
+    100%{
+        transform: 0;
+    }
+}
+
+.animation6{
+    animation: ani06 2s linear;
+}
+@keyframes ani06 {
+    0%{
+        transform: translate(-140
+        px, 130px);
+        color: pink;
+    }
+    100%{
+        transform: 0;
+    }
+}
+
+.animation7{
+    animation: ani07 2s linear;
+}
+@keyframes ani07 {
+    0%{
+        transform: translate(140px, -130px);
+        color: darkorchid;
+    }
+    100%{
+        transform: 0;
+    }
+}
+
+.animation8{
+    animation: ani08 2s linear;
+}
+@keyframes ani08 {
+    0%{
+        transform: translate(140px, 130px);
+        color: greenyellow;
+    }
+    100%{
+        transform: 0;
+    }
+}
+
+.animation9{
+    animation: ani09 2s linear;
+}
+@keyframes ani09 {
+    0%{
+        transform: translate(-140px, -130px);
+        color: gray;
+    }
+    100%{
+        transform: 0;
+    }
+}
+
+.animation10{
+    animation: ani10 2s linear;
+}
+@keyframes ani10 {
+    0%{
+        position: relative;
+        bottom: 23rem;
+        color: brown;
+    }
+    100%{
+        bottom: 0;
+    }
+}
+
+.animation11{
+    animation: ani11 2s linear;
+}
+@keyframes ani11 {
+    0%{
+        position: relative;
+        top: 12rem;
+        color: aquamarine;
+    }
+    100%{
+        bottom: 0;
+    }
+}
+
+.animation12{
+    animation: ani12 2s linear;
+}
+@keyframes ani12 {
+    0%{
+        position: relative;
+        right: 42rem;
+        color: blue;
+    }
+    100%{
+        right: 0;
+    }
+}
+
+.animation13{
+    animation: ani13 2s linear;
+}
+@keyframes ani13 {
+    0%{
+        position: relative;
+        left: 54rem;
+        color: red;
+    }
+    100%{
+        left: 0;
+    }
+}
+
+.animation14{
+    animation: ani14 2s linear;
+}
+@keyframes ani14 {
+    0%{
+        transform: translate(140px, -130px);
+        color: aqua;
+    }
+    100%{
+        transform: 0;
+    }
+}
+
+/*chat app background*/
+
+.transp-appbac{
+    border-radius: 1rem;
+    background: #ffc0cb2b;
+}
+
+/*chat-header*/
+
+.chat-head{
+    background: rgb(100 116 139 / 49%);
 }
 

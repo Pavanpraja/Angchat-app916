@@ -5,6 +5,7 @@ import Login from "./pages/login/Login";
 import Signup from "./pages/signup/Singup";
 import { Toaster } from "react-hot-toast";
 import { useAuthContext } from "./context/AuthContext.jsx";
+import Startani from "./start application animation/Startani.jsx";
 
 function App() {
   const {authUser} = useAuthContext();
@@ -18,6 +19,7 @@ function App() {
         </Routes>
         <Toaster />
       </div>
+        <Startani />
     </>
   );
 }

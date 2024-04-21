@@ -4,6 +4,7 @@ import MessageInput from "./MessageInput"
 import Messages from "./Messages"
 import {TiMessages} from 'react-icons/ti'
 import { useAuthContext } from "../../../context/AuthContext"
+import '../../../App.css'
 
 const MessageContainer = () => {
 
@@ -15,16 +16,16 @@ const MessageContainer = () => {
     },[setSelectedConversation])
 
   return (
-    <div className="md:min-w-[450px] flex flex-col">
+    <div className="md:min-w-[450px] flex w-[100%] flex-col relative">
     {
         !selectedConversation ? (
             <NoChatSelected />
         ) :
       <>
         {/* <Header /> */}
-        <div className="bg-slate-500 px-4 py-2 mb-2">
-            <span className="label-text">To:</span>{" "}
-            <span className="text-gray-900 font-bold">{selectedConversation.fullName}</span>
+        <div className={`chat-head px-4 py-2 mb-2 flex space-x-2 text-center`}>
+            <span className="label-text font-bold [text-shadow:0_0_0.2rem_black] text-white text-[1.2rem]">To:</span>{" "}
+            <span className="text-white font-bold [text-shadow:0_0_0.2rem_black]">{selectedConversation.fullName}</span>
         </div>
 
         <Messages />

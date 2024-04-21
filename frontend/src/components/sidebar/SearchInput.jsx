@@ -28,11 +28,11 @@ const SearchInput = () => {
       <input
         type="text"
         placeholder="Search..."
-        className="input input-bordered rounded-full bg-slate-600 text-white"
+        className="input input-bordered rounded-full bg-slate-700 [box-shadow:inset_0_0_0.2rem_0_white] text-white text-[1.2rem]" 
         value={search}
         onChange={(e) => setSearch(e.target.value)}
       />
-      <button type="submit" className="btn btn-circle bg-black text-white text-2xl"><FaSearchengin /></button>
+      <button type="submit" className="btn btn-circle hover:bg-gray-400 hover:text-black bg-black text-white text-2xl"><FaSearchengin /></button>
     </form>
   );
 };

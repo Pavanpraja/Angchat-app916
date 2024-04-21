@@ -20,13 +20,14 @@ const Conversations = () => {
         const isOnline = onlineUsers.includes(conversation._id)
         return (
           <>
-            <div className={`flex gap-2 items-center hover:bg-black rounded p-2 py-1 cursor-pointer ${isSelected ? "bg-black" : ""}`} onClick={()=>setSelectedConversation(conversation)}>
-              <div className={`avatar ${isOnline ? "online" : ""}`}>
+          <div className={`flex gap-2 items-center hover:bg-black rounded p-2 py-1 cursor-pointer ${isSelected ? "bg-black" : ""}`} onClick={()=>setSelectedConversation(conversation)}>
+          <div className={`avatar ${isOnline ? "online" : ""}`}>
                 <div className="w-12 rounded-full">
                   <img
                     src={conversation.profilePic}
                     alt="user avatar"
                     key={idx}
+                    className="filter invert"
                   />
                 </div>
               </div>
