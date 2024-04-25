@@ -21,7 +21,7 @@ const Messages = () => {
   }, [messages])
 
   return (
-    <div className="px-4 flex-1 overflow-auto" id="chat-box">
+    <div className="px-4 overflow-auto max-sm:h-[38rem] h-[30rem]" id="chat-box">
       {!loading &&
         messages.length > 0 &&
         messages.map((message) => {
@@ -44,7 +44,7 @@ const Messages = () => {
                     />
                   </div>
                 </div>
-                <div className={`chat-bubble text-white w-[29rem] font-bold ${bubbleBgColor} ${shakeClass}`}>
+                <div className={`chat-bubble text-white max-sm:w-[18rem] w-[29rem] font-bold ${bubbleBgColor} ${shakeClass}`}>
                   {message.message}
                 </div>
                 <div className="chat-footer text-white opacity-50 text-xs flex gap-1 items-center font-bold text-[1rem] mt-1">
