@@ -8,6 +8,7 @@ const Singup = () => {
   const [inputs, setInputs] = useState({
     fullName: '',
     userName: '',
+    email: '',
     password: '',
     confirmPassword: '',
     gender: ''
@@ -38,6 +39,12 @@ const Singup = () => {
           <span className="text-base label-text font-bold">Username</span>
         </label>
         <input type="text" placeholder="Enter Username" className="w-full input input-bordered h-10 bg-gray-600 text-white" value={inputs.userName} onChange={(e)=> setInputs({...inputs, userName: e.target.value})}/>
+
+        <label className="label p-2">
+          <span className="text-base label-text font-bold">Email</span>
+        </label>
+        <input type="email" placeholder="Enter Email" className="w-full input input-bordered h-10 bg-gray-600 text-white" value={inputs.email} onChange={(e)=> setInputs({...inputs, email: e.target.value})}/>
+
         <label className="label p-2">
           <span className="text-base label-text font-bold">Password</span>
         </label>

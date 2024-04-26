@@ -10,7 +10,7 @@ const Conversations = () => {
   const { selectedConversation, setSelectedConversation } = useConversation();
   return (
     <div
-      className="py-2 flex flex-col overflow-auto scroll-smooth"
+      className="py-2 flex flex-col overflow-y-auto scroll-smooth h-[50vh]"
       id="journal-scroll"
     >
       {conversations.map((conversation, idx) => {

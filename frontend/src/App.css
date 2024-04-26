@@ -34,7 +34,9 @@
 
 /* set animation background */
 .setBac{
-    background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("/animatebac.gif") ;
+    background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("/animatebac.gif") no-repeat;
+    background-size: cover;
+    background-position: center;
 }
 
 /* starting application animation page */
@@ -237,5 +239,11 @@
 
 .chat-head{
     background: rgb(100 116 139 / 49%);
+}
+
+/*profile section custom*/
+
+.multicolor{
+    box-shadow:0rem 0rem 9rem 0rem #ff0000, 0 0 3rem 0 aqua, 0rem 0rem 1rem 0rem red, 0rem 0rem 1rem 0rem red;
 }
 

@@ -21,7 +21,7 @@ const Messages = () => {
   }, [messages])
 
   return (
-    <div className="px-4 overflow-auto max-sm:h-[38rem] h-[30rem]" id="chat-box">
+    <div className="px-4 overflow-auto max-sm:h-[38rem] h-[36rem]" id="chat-box">
       {!loading &&
         messages.length > 0 &&
         messages.map((message) => {

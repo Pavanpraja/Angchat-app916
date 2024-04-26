@@ -6,6 +6,7 @@ import Signup from "./pages/signup/Singup";
 import { Toaster } from "react-hot-toast";
 import { useAuthContext } from "./context/AuthContext.jsx";
 import Startani from "./start application animation/Startani.jsx";
+import Profile from "./components/profile section/Profile.jsx";
 
 function App() {
   const {authUser} = useAuthContext();
@@ -16,6 +17,7 @@ function App() {
           <Route path="/" element={authUser ? <Home /> : <Navigate to="/login" />} />
           <Route path="/login" element={authUser ? <Navigate to="/" /> : <Login />} />
           <Route path="/signup" element={authUser ? <Navigate to="/" /> : <Signup />} />
+          <Route path="/profile" element={<Profile />} />
         </Routes>
         <Toaster />
       </div>
