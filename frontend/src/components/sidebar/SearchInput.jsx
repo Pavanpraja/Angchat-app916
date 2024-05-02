@@ -32,7 +32,7 @@ const SearchInput = () => {
         value={search}
         onChange={(e) => setSearch(e.target.value)}
       />
-      <button type="submit" className="btn btn-circle hover:bg-gray-400 hover:text-black bg-black text-white text-2xl"><FaSearchengin /></button>
+      <button type="submit" className="btn btn-circle border-0 hover:bg-gray-400 hover:text-black bg-slate-700 [box-shadow:inset_0_0_0.2rem_0_white] text-white text-2xl"><FaSearchengin /></button>
     </form>
   );
 };

@@ -15,7 +15,7 @@ const Profile = () => {
     <h1 className="font-bold text-[2rem] border-b border-b-gray-500 border-b-[0.2rem] [text-shadow:0_0_0.2rem_black] text-[aqua]">Hello! <span className="text-[red]">User</span></h1>
       <div className="text-gray-300 p-[5rem] space-y-1">
       <div className="bg-black rounded-full [box-shadow:0_0_1rem_0_black] [box-shadow:inset_0_0_1rem_0_aqua] p-[2rem]">
-        <img src={userData.profilePic} alt="image" className="rounded-full w-[12rem] h-[12rem] multicolor" />
+        <img src={userData.profilePic} alt="image" className="rounded-full w-[12rem] h-[12rem] multicolor lrimg" />
       </div>
         <h1 className="text-[1.7rem] text-gray-300 font-bold [text-shadow:0_0_0.1rem_black]">{userData.userName}</h1>
         <p className="text-[1.2rem] text-[#ffb4b4] font-bold [text-shadow:0_0_0.1rem_black]">Email</p>
