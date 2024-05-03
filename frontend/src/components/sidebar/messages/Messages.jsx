@@ -31,6 +31,8 @@ const Messages = () => {
           const bubbleBgColor = fromMe ? 'bg-slate-600' : "";
           const formattedTime = extractTime(message.createdAt);
           const shakeClass = message.shouldShake ? "shake" : ""
+
+         
           return (
             <>
             <div key={message._id} ref={lastMessageRef}>

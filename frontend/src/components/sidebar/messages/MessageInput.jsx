@@ -22,20 +22,21 @@ const MessageInput = () => {
 
   return (
     <>
-      <div className="flex px-4 space-x-2 text-center w-full">
-        <button onClick={() => setOpenEmoji((prev) => !prev)}>
+      <div className="flex px-4 space-x-1 text-center w-full items-center">
+        <button onClick={() => setOpenEmoji((prev) => !prev)} className="p-1 border rounded-lg bg-black h-[2.5rem] w-[2.5rem] flex items-center justify-center hover:bg-white hover:border-white">
           <img
             width={40}
             height={40}
             src="https://img.icons8.com/windows/32/crazy.png"
             alt="crazy"
+            className="invert hover:invert-0 z-10"
           />
         </button>
         <form className="my-3" onSubmit={handleSubmit}>
-          <div className="w-full relative flex space-x-2 items-center">
+          <div className="w-full relative space-x-2 flex items-center">
             <input
               type="text"
-              className="border w-[42rem] text-sm rounded-lg block p-2.5 bg-gray-700 border-gray-600 text-white"
+              className="border w-[40rem] text-sm rounded-lg block p-2.5 bg-gray-700 border-gray-600 text-white"
               placeholder="Send a message"
               value={message}
               onChange={(e) => setMessage(e.target.value)}
@@ -48,7 +49,7 @@ const MessageInput = () => {
                 {loading ? (
                   <div className="loading loading-spinner"></div>
                 ) : (
-                  <BsSend className="text-[1.5rem]" />
+                  <BsSend className="text-[2.4rem] text-white p-1 border rounded-lg bg-black hover:text-black hover:bg-white hover:border-white [box-shadow:0_0_0.3rem_black] font-bold text-[2rem]" />
                 )}
               </button>
               <div className="absolute right-0 bottom-12">
