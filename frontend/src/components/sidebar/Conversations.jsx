@@ -10,7 +10,7 @@ const Conversations = () => {
   const { selectedConversation, setSelectedConversation } = useConversation();
   return (
     <div
-      className="py-2 flex flex-col overflow-y-auto scroll-smooth h-[50vh]"
+      className="py-2 flex flex-col overflow-y-auto scroll-smooth h-[50rem]"
       id="journal-scroll"
     >
       {conversations.map((conversation, idx) => {
@@ -22,7 +22,7 @@ const Conversations = () => {
           <>
           <div className={`flex gap-2 items-center hover:bg-black rounded p-2 py-1 cursor-pointer ${isSelected ? "bg-black" : ""}`} onClick={()=>setSelectedConversation(conversation)}>
           <div className={`avatar ${isOnline ? "online" : ""}`}>
-                <div className="w-12 rounded-full">
+                <div className="w-[5rem] rounded-full">
                   <img
                     src={conversation.profilePic}
                     alt="user avatar"
@@ -33,10 +33,10 @@ const Conversations = () => {
               </div>
               <div className="flex flex-col flex-1">
                 <div className="flex gap-3 justify-between">
-                  <p className="font-bold text-gray-200" key={conversation._id}>
+                  <p className="font-bold text-[1.8rem] text-gray-200" key={conversation._id}>
                     {conversation.fullName}
                   </p>
-                  <span className="text-xl">{getRandomEmoji()}</span>
+                  <span className="text-[2.5rem]">{getRandomEmoji()}</span>
                 </div>
               </div>
             </div>

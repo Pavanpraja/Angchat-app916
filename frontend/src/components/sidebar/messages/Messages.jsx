@@ -21,7 +21,7 @@ const Messages = () => {
   }, [messages])
 
   return (
-    <div className="px-4 overflow-auto max-sm:h-[38rem] h-[36rem]" id="chat-box">
+    <div className="px-4 overflow-auto h-[55rem]" id="chat-box">
       {!loading &&
         messages.length > 0 &&
         messages.map((message) => {
@@ -36,9 +36,9 @@ const Messages = () => {
           return (
             <>
             <div key={message._id} ref={lastMessageRef}>
-              <div className={`chat ${chatClassName}`}>
+              <div className={`chat ${chatClassName} mb-[1rem]`}>
                 <div className="chat-image avatar">
-                  <div className="w-10 rounded-full">
+                  <div className="w-[4.5rem] rounded-full">
                     <img
                       alt="Tailwind CSS chat bubble component"
                       src={profilePic}
@@ -46,10 +46,10 @@ const Messages = () => {
                     />
                   </div>
                 </div>
-                <div className={`chat-bubble text-white max-sm:w-[18rem] w-[29rem] font-bold ${bubbleBgColor} ${shakeClass}`}>
+                <div className={`chat-bubble text-white max-sm:w-[18rem] p-[1rem] w-[29rem] text-[1.7rem] font-bold ${bubbleBgColor} ${shakeClass}`}>
                   {message.message}
                 </div>
-                <div className="chat-footer text-white opacity-50 text-xs flex gap-1 items-center font-bold text-[1rem] mt-1">
+                <div className="chat-footer text-white opacity-50 flex gap-1 items-center font-bold text-[1.4rem] mt-1">
                   <p>{formattedTime}</p>
                 </div>
               </div>
@@ -61,7 +61,7 @@ const Messages = () => {
       {loading && [...Array(3)].map((_, idx) => <MessageSkeleton key={idx} />)}
 
       {!loading && messages.length === 0 && (
-        <p className="text-center">
+        <p className="text-center text-[2rem]">
           🙄 Send a message to start the conversation
         </p>
       )}
