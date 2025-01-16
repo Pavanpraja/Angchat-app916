@@ -5,23 +5,26 @@ import generateTokenAndSetCookie from "../utils/generateToken.js";
 export const signup = async (req, res) => {
   try {
     const { fullName, userName, email, password, confirmPassword, gender } = req.body;
+    // console.log(fullName)
 
     if (password !== confirmPassword) {
       return res.status(400).json({ error: "Password don't match" });
     }
 
-    const user = await User.findOne({ userName });
-
-    if (user) {
+    // Check for existing username
+    const userNameExists = await User.findOne({ userName });
+    if (userNameExists) {
       return res.status(400).json({ error: "Username already exists" });
     }
 
-    //HASH PASSWORD HERE
+    // Check for existing email
+    const emailExists = await User.findOne({ email });
+    if (emailExists) {
+      return res.status(400).json({ error: "Email already exists" });
+    }
 
     const salt = await bcrypt.genSalt(10);
     const hashedPassword = await bcrypt.hash(password, salt);
-
-    //https://avatar-placeholder-iran.liara.run/
 
     const boyProfilePic = `https://avatar.iran.liara.run/public/boy?username=${userName}`;
     const girlProfilePic = `https://avatar.iran.liara.run/public/grild?username=${userName}`;
@@ -36,7 +39,7 @@ export const signup = async (req, res) => {
     });
 
     if (newUser) {
-      //Generate jwt token here
+      // Generate token before saving to ensure user creation is successful
       generateTokenAndSetCookie(newUser._id, res);
       await newUser.save();
 
@@ -53,6 +56,10 @@ export const signup = async (req, res) => {
     }
   } catch (error) {
     console.log("Error in signup controller", error.message);
+    // Improved error handling
+    if (error.code === 11000) {
+      return res.status(400).json({ error: "Email or username already exists" });
+    }
     res.status(500).json({ error: "Internal server error" });
   }
 };
