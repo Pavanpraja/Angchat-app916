@@ -7,16 +7,18 @@ export const sendMessage = async (req, res) =>{
         const {message} = req.body;
         const {id:receiverId} = req.params;
         const senderId = req.user._id
-
+        
         let conversation = await Conversation.findOne({
             participants: {$all: [senderId, receiverId]},
         })
-
+        // console.log("receiverId: ", senderId)
+        
         if(!conversation){
             conversation = await Conversation.create({
                 participants: [senderId, receiverId],
             })
         }
+        // console.log("conversation: ", conversation)
 
         const newMessage = new Message({
             senderId,
@@ -36,6 +38,7 @@ export const sendMessage = async (req, res) =>{
         
         //SOCKET IO FUNCTIONALITY WILL GO HERE
         const receiverSocketId = getReceiverSocketId(receiverId);
+        // console.log("receiverSocketId: ", receiverSocketId)
         if(receiverSocketId) {
             //io.to(<socket_id>).emit() used to send events to specific client
             io.to(receiverSocketId).emit("newMessage", newMessage)

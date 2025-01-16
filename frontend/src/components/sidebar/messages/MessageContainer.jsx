@@ -5,8 +5,9 @@ import Messages from "./Messages"
 import {TiMessages} from 'react-icons/ti'
 import { useAuthContext } from "../../../context/AuthContext"
 import '../../../App.css'
+import { FaArrowLeft } from "react-icons/fa6";
 
-const MessageContainer = () => {
+const MessageContainer = ({visible, handleOpenProps}) => {
 
     const {selectedConversation, setSelectedConversation} = useConversation();
 
@@ -16,7 +17,7 @@ const MessageContainer = () => {
     },[setSelectedConversation])
 
   return (
-    <div className="flex w-[100%] flex-col relative">
+    <div className={`flex w-[100%] flex-col relative ${visible ? 'hidden' : ''}`}>
     {
         !selectedConversation ? (
             <NoChatSelected />
@@ -24,6 +25,7 @@ const MessageContainer = () => {
       <>
         {/* <Header /> */}
         <div className={`chat-head px-4 py-2 mb-2 flex space-x-2 items-center text-[2rem]`}>
+        <h1 onClick={()=>handleOpenProps(true)} className="text-[2rem] font-bold text-white"><FaArrowLeft /></h1>
             <span className="label-text font-bold [text-shadow:0_0_0.2rem_black] text-white text-[2rem]">To:</span>{" "}
             <span className="text-white font-bold [text-shadow:0_0_0.2rem_black]">{selectedConversation.fullName}</span>
         </div>

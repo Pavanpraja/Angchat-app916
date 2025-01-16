@@ -5,7 +5,7 @@ import useGetConversations from "../../hooks/useGetConversations";
 import { getRandomEmoji } from "../../utils/emojis";
 import useConversation from "../../zustand/useConversation";
 
-const Conversations = () => {
+const Conversations = ({handleSidebarVisible}) => {
   const { loading, conversations } = useGetConversations();
   const { selectedConversation, setSelectedConversation } = useConversation();
   return (
@@ -20,7 +20,8 @@ const Conversations = () => {
         const isOnline = onlineUsers.includes(conversation._id)
         return (
           <>
-          <div className={`flex gap-2 items-center hover:bg-black rounded p-2 py-1 cursor-pointer ${isSelected ? "bg-black" : ""}`} onClick={()=>setSelectedConversation(conversation)}>
+          
+          <div className={`flex gap-2 items-center hover:bg-black rounded p-2 py-1 cursor-pointer ${isSelected ? "bg-black" : ""}`} onClick={()=>setSelectedConversation(conversation) || handleSidebarVisible()}>
           <div className={`avatar ${isOnline ? "online" : ""}`}>
                 <div className="w-[5rem] rounded-full">
                   <img

@@ -83,6 +83,8 @@ export const login = async (req, res) => {
       _id: user._id,
       fullName: user.fullName,
       userName: user.userName,
+      email: user.email,
+      gender: user.gender,
       profilePic: user.profilePic,
     });
   } catch (error) {
@@ -92,7 +94,7 @@ export const login = async (req, res) => {
 };
 
 export const logout = (req, res) => {
-  try { 
+  try {
     res.cookie("jwt", "", { maxAge: 0 });
     res.status(200).json({ message: "Logged out successfully" });
   } catch (error) {

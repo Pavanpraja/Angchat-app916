@@ -2,6 +2,7 @@ import { useCallback, useState } from "react";
 import { BsSend } from "react-icons/bs";
 import useSendMessage from "../../../hooks/useSendMessage";
 import EmojiPicker from "emoji-picker-react";
+import { BsEmojiSunglasses } from "react-icons/bs";
 
 const MessageInput = () => {
   const [message, setMessage] = useState("");
@@ -23,18 +24,14 @@ const MessageInput = () => {
   return (
     <>
       <div className="flex px-[2rem] w-full space-x-1 text-center items-center">
-        <button onClick={() => setOpenEmoji((prev) => !prev)} className="p-1 border rounded-xl bg-black h-[4rem] w-[4rem] flex items-center justify-center hover:bg-white hover:border-white">
-          <img
-            src="https://img.icons8.com/windows/32/crazy.png"
-            alt="crazy"
-            className="invert hover:invert-0 z-10 w-[4rem] h-[3.6rem] max-[561px]:w-[3rem]"
-          />
+        <button onClick={() => setOpenEmoji((prev) => !prev)}>
+          <BsEmojiSunglasses className="text-[3.6rem] text-white p-1 border rounded-full bg-black hover:text-black hover:bg-white hover:border-white [box-shadow:0_0_0.3rem_black] font-bold" />
         </button>
-        <form className="my-3" onSubmit={handleSubmit}>
+        <form className="my-3 w-full" onSubmit={handleSubmit}>
           <div className="w-full relative space-x-2 flex items-center">
             <input
               type="text"
-              className="border rounded-lg block p-2.5 bg-gray-700 border-gray-600 text-white text-[1.5rem] "
+              className="border rounded-full w-full block p-2.5 bg-gray-700 border-gray-600 text-white text-[1.5rem] "
               placeholder="Send a message"
               value={message}
               onChange={(e) => setMessage(e.target.value)}
@@ -47,7 +44,7 @@ const MessageInput = () => {
                 {loading ? (
                   <div className="loading loading-spinner"></div>
                 ) : (
-                  <BsSend className="text-[3.6rem] text-white p-1 border rounded-lg bg-black hover:text-black hover:bg-white hover:border-white [box-shadow:0_0_0.3rem_black] font-bold text-[2rem]" />
+                  <BsSend className="text-[3.6rem] text-white p-1 border rounded-full bg-black hover:text-black hover:bg-white hover:border-white [box-shadow:0_0_0.3rem_black] font-bold" />
                 )}
               </button>
               <div className="absolute right-0 bottom-12 w-[34rem] h-[40rem]">
