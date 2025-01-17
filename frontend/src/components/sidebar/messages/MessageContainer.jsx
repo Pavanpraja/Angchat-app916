@@ -25,7 +25,7 @@ const MessageContainer = ({visible, handleOpenProps}) => {
       <>
         {/* <Header /> */}
         <div className={`chat-head px-4 py-2 mb-2 flex space-x-2 items-center text-[2rem]`}>
-        <h1 onClick={()=>handleOpenProps(true)} className="text-[2rem] font-bold text-white"><FaArrowLeft /></h1>
+        <h1 onClick={()=>handleOpenProps(true)} className="text-[2rem] font-bold text-white hover:text-gray-700 cursor-pointer"><FaArrowLeft /></h1>
             <span className="label-text font-bold [text-shadow:0_0_0.2rem_black] text-white text-[2rem]">To:</span>{" "}
             <span className="text-white font-bold [text-shadow:0_0_0.2rem_black]">{selectedConversation.fullName}</span>
         </div>
